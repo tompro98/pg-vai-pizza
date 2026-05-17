@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+---
+<Layout title="Speisekarte — Vai Pizza Braunschweig" description="Vollständige Speise- und Getränkekarte von Vai Pizza Braunschweig: Pizzen, Cocktails, Wein, Bier und mehr.">
+  <Nav />
+  <main class="karte-page">
+    <div class="container">
+      <div class="karte-header">
+        <span class="eyebrow dark">La Carta</span>
+        <h1 class="display italic">Speise­karte</h1>
+        <p>Alle Preise pro Person, inkl. 19 % MwSt. Irrtümer und Preisänderungen vorbehalten.</p>
+      </div>
+
+      <!-- All you can eat -->
+      <section class="karte-section" id="ayce">
+        <h2>All you can eat</h2>
+        <div class="karte-cards">
+          <div class="karte-card featured">
+            <div class="karte-card-name">Pizza Rodizio</div>
+            <div class="karte-card-desc">Über 20 Pizza-Sorten, so viel du magst · Mo–So ab 17 Uhr</div>
+            <div class="karte-card-price">14,50 €</div>
+          </div>
+          <div class="karte-card">
+            <div class="karte-card-name">Burger all you can eat</div>
+            <div class="karte-card-desc">So viel du magst · Mo–So ab 17 Uhr</div>
+            <div class="karte-card-price">16,90 €</div>
+          </div>
+          <div class="karte-card">
+            <div class="karte-card-name">Pizza & Burger all you can eat</div>
+            <div class="karte-card-price">19,90 €</div>
+          </div>
+          <div class="karte-card">
+            <div class="karte-card-name">Pizza all you can eat + Getränke</div>
+            <div class="karte-card-desc">inkl. Softdrinks, Hauswein, Bier vom Fass</div>
+            <div class="karte-card-price">29,00 €</div>
+          </div>
+          <div class="karte-card">
+            <div class="karte-card-name">Burger all you can eat + Getränke</div>
+            <div class="karte-card-price">31,00 €</div>
+          </div>
+          <div class="karte-card">
+            <div class="karte-card-name">Pizza & Burger all you can eat + Getränke</div>
+            <div class="karte-card-price">34,00 €</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cocktails -->
+      <section class="karte-section" id="cocktails">
+        <h2>Cocktails</h2>
+
+        <h3>Sours <span class="price-note">je 8,50 €</span></h3>
+        <table class="karte-table">
+          <tbody>
+            <tr><td>Amaretto Sour</td><td class="desc">Amaretto, Zitrone, Zuckersirup, Orange</td></tr>
+            <tr><td>Aperol Sour</td><td class="desc">Aperol, Zitrone, Zuckersirup</td></tr>
+            <tr><td>Licor 43 Sour</td><td class="desc">Licor 43, Zitrone, Zucker, Maracujasaft</td></tr>
+            <tr><td>Vodka Sour</td><td class="desc">Vodka, Zitrone, Zuckersirup</td></tr>
+            <tr><td>Whiskey Sour</td><td class="desc">Whiskey, Zitrone, Zuckersirup</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Brazil</h3>
+        <table class="karte-table">
+          <tbody>
+            <tr><td>Caipirinha</td><td class="desc">Cachaça, Lime Juice, Limone, Rohrzucker</td><td class="price">8,90 €</td></tr>
+            <tr><td>Caipirovka</td><td class="desc">Vodka, Lime Juice, Limone, Rohrzucker</td><td class="price">8,90 €</td></tr>
+            <tr><td>Caipi 43</td><td class="desc">Licor 43, Limette, Rohrzucker</td><td class="price">8,90 €</td></tr>
+            <tr><td>Caipibull</td><td class="desc">Vodka, Limette, Rohrzucker, Red Bull</td><td class="price">8,90 €</td></tr>
+            <tr><td>Batida de Brazil</td><td class="desc">Cachaça, Blue Curaçao, Limone, Ananas</td><td class="price">8,90 €</td></tr>
+            <tr><td>Batida de Maracuja</td><td class="desc">Cachaça, Limone, Maracuja</td><td class="price">8,90 €</td></tr>
+            <tr><td>Batida de Mango</td><td class="desc">Cachaça, Apricot, Limone, Mango</td><td class="price">8,90 €</td></tr>
+            <tr><td>Caipirinha Colada</td><td class="desc">Cachaça, Kokossirup, Sahne, Ananas</td><td class="price">8,90 €</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Mocktails <span class="price-note">je 7,50 €</span></h3>
+        <table class="karte-table">
+          <tbody>
+            <tr><td>Avatar</td><td class="desc">Blue Curaçao, Kokossirup, Ananas, Banane</td></tr>
+            <tr><td>Florida</td><td class="desc">Maracuja, Orange, Ananas, Grapefruit, Zitrone</td></tr>
+            <tr><td>Coco Colada</td><td class="desc">Kokossirup, Sahne, Ananas</td></tr>
+            <tr><td>Ipanema</td><td class="desc">Limette, Rohrzucker, Ginger Ale</td></tr>
+            <tr><td>Tropical</td><td class="desc">Orange, Ananas, Zitrone, Mangosirup, Grenadine</td></tr>
+            <tr><td>Mint Cooler</td><td class="desc">Orange, Maracuja, Zitrone, Pfefferminzsirup</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Weine -->
+      <section class="karte-section" id="weine">
+        <h2>Weine</h2>
+        <table class="karte-table">
+          <thead><tr><th>Wein</th><th>Menge</th><th class="price">Preis</th></tr></thead>
+          <tbody>
+            <tr><td>Rioja (Rot, Rosé, Weiß)</td><td>0,2 l</td><td class="price">4,90 €</td></tr>
+            <tr><td>Rioja (Rot, Rosé, Weiß)</td><td>0,5 l</td><td class="price">12,00 €</td></tr>
+            <tr><td>Pinot (Weiß)</td><td>0,2 l</td><td class="price">5,20 €</td></tr>
+            <tr><td>Pinot (Weiß)</td><td>0,5 l</td><td class="price">12,00 €</td></tr>
+            <tr><td>Hausmarke (Rot, Weiß)</td><td>0,2 l</td><td class="price">5,90 €</td></tr>
+            <tr><td>Hausmarke (Rot, Weiß)</td><td>0,75 l</td><td class="price">19,00 €</td></tr>
+            <tr><td>Sangria Hausgemacht</td><td>0,5 l</td><td class="price">9,00 €</td></tr>
+            <tr><td>Sangria Hausgemacht</td><td>1,0 l</td><td class="price">18,00 €</td></tr>
+            <tr><td>Prosecco</td><td>0,1 l</td><td class="price">3,90 €</td></tr>
+            <tr><td>Prosecco auf Eis</td><td>0,2 l</td><td class="price">5,50 €</td></tr>
+            <tr><td>Aperol Spritz</td><td>0,2 l</td><td class="price">5,90 €</td></tr>
+            <tr><td>Flasche Prosecco</td><td>0,75 l</td><td class="price">19,50 €</td></tr>
+            <tr><td>Veuve Clicquot</td><td>0,75 l</td><td class="price">65,00 €</td></tr>
+            <tr><td>Pommery</td><td>0,75 l</td><td class="price">38,00 €</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Bier -->
+      <section class="karte-section" id="bier">
+        <h2>Bier</h2>
+        <h3>Fassbier</h3>
+        <table class="karte-table">
+          <tbody>
+            <tr><td>Wolters Pilsener</td><td>0,2 l</td><td class="price">3,00 €</td></tr>
+            <tr><td>Wolters Pilsener</td><td>0,4 l</td><td class="price">4,70 €</td></tr>
+            <tr><td>Alster (Wolters + Sprite)</td><td>0,4 l</td><td class="price">4,70 €</td></tr>
+            <tr><td>Diesel (Wolters + Cola)</td><td>0,4 l</td><td class="price">4,70 €</td></tr>
+            <tr><td>Duckstein</td><td>0,3 l</td><td class="price">3,50 €</td></tr>
+            <tr><td>Duckstein</td><td>0,5 l</td><td class="price">5,50 €</td></tr>
+          </tbody>
+        </table>
+        <h3>Importbier</h3>
+        <table class="karte-table">
+          <tbody>
+            <tr><td>San Miguel</td><td>0,33 l</td><td class="price">4,20 €</td></tr>
+            <tr><td>Estrella Damm</td><td>0,33 l</td><td class="price">4,20 €</td></tr>
+            <tr><td>Desperados</td><td>0,33 l</td><td class="price">4,20 €</td></tr>
+            <tr><td>Corona</td><td>0,33 l</td><td class="price">4,20 €</td></tr>
+            <tr><td>Salitos</td><td>0,33 l</td><td class="price">4,20 €</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Softgetränke & Kaffee -->
+      <section class="karte-section" id="getraenke">
+        <h2>Softgetränke & Kaffee</h2>
+        <table class="karte-table">
+          <tbody>
+            <tr><td>Coca Cola / Fanta / Sprite / Spezi</td><td>0,2 l Fl.</td><td class="price">3,00 €</td></tr>
+            <tr><td>Coca Cola / Fanta / Sprite / Spezi</td><td>0,4 l Gl.</td><td class="price">4,70 €</td></tr>
+            <tr><td>Red Bull Classic</td><td>0,2 l</td><td class="price">3,50 €</td></tr>
+            <tr><td>Säfte (Ananas, Apfel, Orange, u.v.m.)</td><td>0,2 l</td><td class="price">3,00 €</td></tr>
+            <tr><td>Säfte</td><td>0,4 l</td><td class="price">4,90 €</td></tr>
+            <tr><td>Aqua Morelli Frizzante / Naturale</td><td>0,25 l</td><td class="price">3,00 €</td></tr>
+            <tr><td>Aqua Morelli Frizzante / Naturale</td><td>0,75 l</td><td class="price">6,50 €</td></tr>
+            <tr><td colspan="3" class="karte-divider">Kaffeespezialitäten</td></tr>
+            <tr><td>Espresso</td><td></td><td class="price">2,00 €</td></tr>
+            <tr><td>Cappuccino</td><td></td><td class="price">3,90 €</td></tr>
+            <tr><td>Latte Macchiato</td><td></td><td class="price">3,90 €</td></tr>
+            <tr><td>Kaffee Crema</td><td></td><td class="price">2,90 €</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="karte-legal">
+        Irrtümer und Preisänderungen vorbehalten. Alle Preise inkl. 19 % MwSt.
+        <br/>Zusatzstoffe: 1. koffeinhaltig · 2. mit Farbstoff · 3. mit Konservierungsstoff · 4. mit Chinin
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .karte-page { background: var(--cream-100); padding: 80px 0 120px; }
+  .karte-header { text-align: center; margin-bottom: 80px; }
+  .karte-header h1 { font-size: clamp(56px, 8vw, 100px); margin: 12px 0 16px; }
+  .karte-header p { font-size: 14px; color: rgba(26,26,22,.5); }
+  .karte-section { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid rgba(26,26,22,.1); }
+  .karte-section:last-of-type { border-bottom: none; }
+  .karte-section h2 { font-family: var(--font-display); font-style: italic; font-size: 40px; font-weight: 400; margin: 0 0 32px; color: var(--green-800); }
+  .karte-section h3 { font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(26,26,22,.45); margin: 28px 0 12px; }
+  .price-note { font-family: var(--font-display); font-style: italic; font-size: 20px; font-weight: 400; color: var(--tomato); letter-spacing: 0; text-transform: none; }
+  .karte-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .karte-table th { text-align: left; padding: 10px 0; font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: rgba(26,26,22,.4); border-bottom: 2px solid rgba(26,26,22,.1); }
+  .karte-table td { padding: 11px 0; border-bottom: 1px solid rgba(26,26,22,.07); vertical-align: top; }
+  .karte-table tr:last-child td { border-bottom: none; }
+  .karte-table td.desc { color: rgba(26,26,22,.5); font-size: 13px; padding-left: 24px; }
+  .karte-table td.price { text-align: right; font-weight: 700; font-family: var(--font-display); font-style: italic; font-size: 17px; color: var(--tomato); white-space: nowrap; }
+  .karte-table th.price { text-align: right; }
+  .karte-divider { padding-top: 20px; font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: rgba(26,26,22,.4); }
+  .karte-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .karte-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .karte-card.featured { background: var(--green-800); color: var(--cream-50); }
+  .karte-card-name { font-family: var(--font-display); font-style: italic; font-size: 20px; font-weight: 400; margin-bottom: 6px; }
+  .karte-card-desc { font-size: 13px; color: rgba(26,26,22,.5); margin-bottom: 12px; }
+  .karte-card.featured .karte-card-desc { color: rgba(245,236,214,.6); }
+  .karte-card-price { font-family: var(--font-display); font-style: italic; font-size: 28px; color: var(--tomato); }
+  .karte-card.featured .karte-card-price { color: var(--yellow); }
+  .karte-legal { font-size: 13px; color: rgba(26,26,22,.4); line-height: 1.8; margin-top: 40px; }
+  @media (max-width: 768px) {
+    .karte-cards { grid-template-columns: 1fr; }
+    .karte-table td.desc { display: none; }
+  }
+</style>

@@ -1,0 +1,34 @@
+---
+const items = [
+  "Hähnchen Barbecue","Meeresfrüchte","Rucola","Hawaii","Rustica",
+  "Pastirma","Sucuk","Truthahn-Salami","Hollandaise","Champignons",
+  "Sardellen","Peperoni","Thunfisch","Mais","Spinat","Broccoli",
+  "Artischocken","Spargel","Jalapeños","Zwiebeln","Oliven","Paprika",
+]
+---
+<section id="zutaten" class="ingredients">
+  <div class="container">
+    <div class="ingredients-grid">
+      <div>
+        <span class="eyebrow tomato">Wähl deine Lieblings­pizza</span>
+        <h2>Über 20 Zutaten, eine ehrliche Pizza.</h2>
+        <p>
+          Unsere Pizzaioli kombinieren klassisch italienische mit etwas brasilianischer Lebendigkeit.
+          Was heute Abend auf dem Blech landet, hängt von der Stimmung der Küche ab — aber unsere
+          Standards findest du fast immer.
+        </p>
+        <a href="/karte" class="btn btn-ghost-dark">
+          Komplette Speisekarte
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="ingredients-image">
+        <img src="/images/vai-pizza-kueche.jpg" alt="Pizzaiolo am Steinofen" />
+        <span class="ingredients-image-tag">Frisch aus dem Steinofen</span>
+      </div>
+    </div>
+    <div class="ingredients-chips">
+      {items.map(item => <span class="chip">{item}</span>)}
+    </div>
+  </div>
+</section>

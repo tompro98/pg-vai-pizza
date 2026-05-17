@@ -1,0 +1,71 @@
+---
+const cocktails = [
+  { cat: "Brazil",   name: "Caipirinha",  desc: "Cachaça, Lime, Rohrzucker",    price: "8,90" },
+  { cat: "Caribic",  name: "Mojito",      desc: "Weißer Rum, Minze, Soda",      price: "8,90" },
+  { cat: "Coladas",  name: "Piña Colada", desc: "Weißer Rum, Kokos, Ananas",    price: "8,90" },
+  { cat: "Classic",  name: "Negroni",     desc: "Gin, Campari, Vermouth",        price: "8,90" },
+  { cat: "Mocktail", name: "Florida",     desc: "Maracuja, Orange, Ananas",      price: "7,50" },
+]
+---
+<section id="bar" class="bar">
+  <div class="container">
+    <div class="bar-grid">
+      <div class="bar-text">
+        <span class="eyebrow">Hinter der Bar</span>
+        <h2>Cocktails,<br/>so bunt wie<br/><span class="tomato">Brasilien</span>.</h2>
+        <p>
+          Über 100 Cocktails, Mocktails, Sours und brasilianische Caipis. Frisch gemixt
+          von unserem Barkeeper — wahlweise auch komplett alkoholfrei. Setz dich an die Bar,
+          schau zu, lass dich überraschen.
+        </p>
+        <div class="hero-ctas">
+          <a href="/karte#cocktails" class="btn btn-primary">Cocktailkarte ansehen</a>
+          <a href="/karte" class="btn btn-ghost-light">Komplette Speisekarte</a>
+        </div>
+
+        <div class="happy-hour">
+          <span class="hh-eyebrow">Happy Hour</span>
+          <h3>Würfle deinen Cocktail.</h3>
+          <p>Du zahlst nur das, was du würfelst. Gilt für alle Cocktails bis 7,50 €.</p>
+          <div class="times">
+            <span class="time-pill"><strong>Di–Do</strong>19–21 Uhr</span>
+            <span class="time-pill"><strong>Fr+Sa</strong>21–24 Uhr</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bar-visual">
+        <div class="bar-stack">
+          <div class="img tall">
+            <img src="/images/vai-pizza-cocktail-blue.jpg" alt="Cocktail" />
+          </div>
+          <div class="label-card">
+            <div class="small">An der Bar</div>
+            <div class="big">100+<br/>Cocktails</div>
+            <div class="small">à 7,50–11,50 €</div>
+          </div>
+          <div class="img">
+            <img src="/images/vai-pizza-barkeeper.jpg" alt="Barkeeper" />
+          </div>
+          <div class="img">
+            <img src="/images/vai-pizza-cocktail-frucht.jpg" alt="Frucht-Cocktail" />
+          </div>
+          <div class="img">
+            <img src="/images/vai-pizza-cocktails.jpg" alt="Cocktails" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cocktail-strip">
+      {cocktails.map(c => (
+        <div class="cocktail-card">
+          <span class="cat">{c.cat}</span>
+          <h4>{c.name}</h4>
+          <p>{c.desc}</p>
+          <div class="price">{c.price} €</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

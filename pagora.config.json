@@ -1,0 +1,76 @@
+{
+  "customer": {
+    "name": "Vai Pizza",
+    "industry": "restaurant",
+    "location": "Braunschweig",
+    "language": "de"
+  },
+  "website": {
+    "type": "onepager",
+    "pages": ["index", "karte"]
+  },
+  "agent": {
+    "content_file": "pagora.content.json",
+    "allowed_operations": ["edit_text", "update_prices", "swap_images", "add_list_items", "remove_list_items"],
+    "forbidden_operations": ["change_layout", "edit_navigation", "modify_styles", "add_pages", "edit_config"]
+  },
+  "sections": [
+    {
+      "id": "site",
+      "label": "Website & SEO",
+      "fields": [
+        { "key": "site.title", "label": "Seitentitel", "type": "text" },
+        { "key": "site.description", "label": "Meta-Beschreibung", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "hero",
+      "label": "Hero",
+      "fields": [
+        { "key": "hero.script", "label": "Handschrift-Zeile", "type": "text" },
+        { "key": "hero.sub", "label": "Untertitel", "type": "textarea" },
+        { "key": "hero.meta_hours", "label": "Öffnungszeiten (Hero)", "type": "text" },
+        { "key": "hero.meta_floors", "label": "Etagen-Info (Hero)", "type": "text" },
+        { "key": "hero.meta_price", "label": "Preis-Info (Hero)", "type": "text" }
+      ]
+    },
+    {
+      "id": "pricing",
+      "label": "Preise (All you can eat)",
+      "fields": [
+        { "key": "pricing.pizza_price", "label": "Pizza Rodizio — Preis", "type": "text" },
+        { "key": "pricing.burger_price", "label": "Burger AYCE — Preis", "type": "text" },
+        { "key": "pricing.combo_price", "label": "Pizza & Burger — Preis", "type": "text" },
+        { "key": "pricing.pizza_drinks_price", "label": "Pizza + Getränke — Preis", "type": "text" },
+        { "key": "pricing.burger_drinks_price", "label": "Burger + Getränke — Preis", "type": "text" },
+        { "key": "pricing.combo_drinks_price", "label": "Pizza & Burger + Getränke — Preis", "type": "text" }
+      ]
+    },
+    {
+      "id": "visit",
+      "label": "Besuch & Kontakt",
+      "fields": [
+        { "key": "visit.address", "label": "Adresse", "type": "text" },
+        { "key": "visit.phone", "label": "Telefon", "type": "text" },
+        { "key": "visit.hours_mon_thu", "label": "Öffnungszeiten Mo–Do", "type": "text" },
+        { "key": "visit.hours_fri_sat", "label": "Öffnungszeiten Fr+Sa", "type": "text" },
+        { "key": "visit.hours_sun", "label": "Öffnungszeiten So", "type": "text" }
+      ]
+    },
+    {
+      "id": "ingredients",
+      "label": "Pizza-Zutaten",
+      "fields": [
+        { "key": "ingredients.items", "label": "Zutaten-Liste", "type": "list" }
+      ]
+    },
+    {
+      "id": "gallery",
+      "label": "Galerie",
+      "fields": [
+        { "key": "gallery.images", "label": "Bilder", "type": "image_list" }
+      ]
+    }
+  ],
+  "forms": {}
+}

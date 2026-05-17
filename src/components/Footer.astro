@@ -1,0 +1,45 @@
+---
+const base = Astro.url.pathname === '/' ? '' : '/'
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-mega">vai pizza</div>
+    <div class="footer-grid">
+      <div>
+        <img src="/images/vai-pizza-logo.png" alt="Vai Pizza Rodizio" class="footer-logo" />
+        <div class="footer-tagline">
+          Brasilianisch-italienisches Pizza-Rodizio in Braunschweig.<br/>
+          Seit 2014. Mit Liebe gemacht.
+        </div>
+      </div>
+      <div>
+        <h4>Restaurant</h4>
+        <ul>
+          <li><a href={`${base}#rodizio`}>Rodizio-Konzept</a></li>
+          <li><a href={`${base}#preise`}>All you can eat</a></li>
+          <li><a href="/karte">Speisekarte</a></li>
+          <li><a href={`${base}#bar`}>Cocktails</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Besuch</h4>
+        <ul>
+          <li><a href={`${base}#besuch`}>Öffnungszeiten</a></li>
+          <li><a href={`${base}#besuch`}>Reservierung</a></li>
+          <li><a href="https://www.lieferando.de/" target="_blank" rel="noopener noreferrer">Lieferando</a></li>
+          <li><a href={`${base}#besuch`}>Anfahrt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 Vai Pizza · Neustadtring 30A, 38114 Braunschweig</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,31 @@
+---
+interface Props {
+  title?: string
+  description?: string
+}
+const {
+  title = 'Vai Pizza — Pizza Rodizio · Braunschweig',
+  description = 'All-you-can-eat Pizza Rodizio und Cocktailbar in Braunschweig. Täglich ab 17 Uhr. Neustadtring 30A.'
+} = Astro.props
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#1c3324" />
+</head>
+<body>
+  <slot />
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

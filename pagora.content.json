@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "Vai Pizza — Pizza Rodizio · Braunschweig",
+    "description": "All-you-can-eat Pizza Rodizio und Cocktailbar in Braunschweig. Täglich ab 17 Uhr geöffnet. Neustadtring 30A."
+  },
+  "hero": {
+    "script": "Original Brazilian Spirit",
+    "sub": "Brasilianische Gastfreundschaft, italienische Pizza und ein Glas Caipirinha in der Hand. Setz dich an unseren Tisch — wir bringen frische Pizzen, so lange du Lust hast.",
+    "meta_hours": "ab 17:00 Uhr geöffnet",
+    "meta_floors": "2 Etagen + Außenbereich für Sommerabende",
+    "meta_price": "Pizza ohne Limit, ohne Verstecken"
+  },
+  "pricing": {
+    "pizza_price": "14,50 €",
+    "burger_price": "16,90 €",
+    "combo_price": "19,90 €",
+    "pizza_drinks_price": "29,00 €",
+    "burger_drinks_price": "31,00 €",
+    "combo_drinks_price": "34,00 €"
+  },
+  "visit": {
+    "address": "Neustadtring 30A, 38114 Braunschweig",
+    "phone": "0531 / 250 799 44",
+    "hours_mon_thu": "17:00 – 23:00",
+    "hours_fri_sat": "17:00 – 01:00",
+    "hours_sun": "17:00 – 23:00"
+  },
+  "ingredients": {
+    "items": [
+      "Hähnchen Barbecue","Meeresfrüchte","Rucola","Hawaii","Rustica",
+      "Pastirma","Sucuk","Truthahn-Salami","Hollandaise","Champignons",
+      "Sardellen","Peperoni","Thunfisch","Mais","Spinat","Broccoli",
+      "Artischocken","Spargel","Jalapeños","Zwiebeln","Oliven","Paprika"
+    ]
+  },
+  "gallery": {
+    "images": [
+      "/images/vai-pizza-aussenbereich.jpg",
+      "/images/vai-pizza-bar.jpg",
+      "/images/vai-pizza-bar-bereich.jpg",
+      "/images/vai-pizza-barkeeper.jpg",
+      "/images/vai-pizza-barkeeper-blue.jpg",
+      "/images/vai-pizza-cocktail-blue.jpg",
+      "/images/vai-pizza-cocktail-frucht.jpg",
+      "/images/vai-pizza-cocktails.jpg",
+      "/images/vai-pizza-innenbereich.jpg",
+      "/images/vai-pizza-kueche.jpg",
+      "/images/vai-pizza-restaurant-innen.jpg"
+    ]
+  }
+}
