@@ -2,32 +2,32 @@
 const reviews = [
   {
     name: "Jasmin K.", initial: "J", color: "#a8c93b", stars: 5,
-    time: "vor 2 Wochen", badge: "Local Guide",
+    time: "vor 2 Wochen", badge: "Local Guide", photos: 3,
     body: "Endlich mal All-you-can-eat ohne Abstriche bei der Qualität. Die Pizza kam frisch und richtig heiß an den Tisch, das Personal war super aufmerksam. Werden definitiv wiederkommen!",
   },
   {
     name: "Markus B.", initial: "M", color: "#f0cf2e", stars: 5,
-    time: "vor 1 Monat", badge: null,
+    time: "vor 1 Monat", badge: null, photos: 8,
     body: "Ich bin schon seit Jahren Stammgast. Die Caipirinha hier ist die beste in Braunschweig, kein Witz. Und das Rodizio-Konzept funktioniert einfach — man muss nichts entscheiden, das Essen kommt zu einem.",
   },
   {
     name: "Lena S.", initial: "L", color: "#c54a2c", stars: 4,
-    time: "vor 3 Wochen", badge: null,
+    time: "vor 3 Wochen", badge: null, photos: 0,
     body: "Schöner Außenbereich, an warmen Abenden perfekt. Pizza war lecker, einmal mussten wir etwas länger auf die nächste Runde warten. Aber Preis-Leistung absolut top.",
   },
   {
     name: "David O.", initial: "D", color: "#a8c93b", stars: 5,
-    time: "vor 5 Tagen", badge: null,
-    body: "Waren mit 8 Leuten zum Geburtstag da. Würfle-deinen-Cocktail-Aktion war ein Knaller! Stimmung war super, Personal entspannt.",
+    time: "vor 5 Tagen", badge: null, photos: 2,
+    body: "Waren mit 8 Leuten zum Geburtstag da. Würfle-deinen-Cocktail-Aktion war ein Knaller! Habe meinen Mojito für 2 Euro bekommen. Stimmung war super, Personal entspannt.",
   },
   {
     name: "Sophie R.", initial: "S", color: "#f0cf2e", stars: 5,
-    time: "vor 2 Monaten", badge: "Local Guide",
-    body: "Familienabend mit den Kindern — alle satt geworden und alle glücklich. Faire Preise und keine versteckten Aufschläge.",
+    time: "vor 2 Monaten", badge: "Local Guide", photos: 5,
+    body: "Familienabend mit den Kindern — alle satt geworden und alle glücklich. Die kleine wollte nur Margherita, der Große hat sich quer durch die Karte probiert. Faire Preise und keine versteckten Aufschläge.",
   },
   {
     name: "Tobias H.", initial: "T", color: "#c54a2c", stars: 5,
-    time: "vor 1 Woche", badge: null,
+    time: "vor 1 Woche", badge: null, photos: 1,
     body: "Die brasilianische Note macht den Laden besonders. Caipi-Auswahl ist riesig, und die Pizza Rustica ist mein Favorit. Zwei Etagen, immer einen Platz zu finden.",
   },
 ]
@@ -40,27 +40,48 @@ const reviews = [
         <h2 class="display italic">Echte Stimmen, echte Abende.</h2>
       </div>
       <div class="reviews-summary">
-        <div class="reviews-rating">4,8</div>
-        <div class="reviews-stars">★★★★★</div>
-        <div class="reviews-count">Basierend auf Google-Bewertungen</div>
+        <div class="reviews-score">
+          <span class="num">4,0</span>
+          <div class="stars">
+            <div class="stars-row">★★★★☆</div>
+            <span class="count">aus 1.049 Google-Bewertungen</span>
+          </div>
+        </div>
+        <span class="reviews-logo">
+          <span class="g">G</span>
+          Direkt von Google Reviews
+        </span>
       </div>
     </div>
 
     <div class="reviews-grid">
       {reviews.map(r => (
         <div class="review-card">
-          <div class="review-top">
-            <div class="review-avatar" style={`background:${r.color}22;color:${r.color}`}>{r.initial}</div>
+          <div class="review-head">
+            <div class="review-avatar" style={`background:${r.color}`}>{r.initial}</div>
             <div class="review-meta">
-              <div class="review-name">{r.name}</div>
-              <div class="review-time">{r.time}</div>
+              <div class="name">
+                {r.name}
+                {r.badge && <span class="badge">{r.badge}</span>}
+              </div>
+              <div class="time">{r.time}</div>
             </div>
-            {r.badge && <span class="review-badge">{r.badge}</span>}
+            <div class="review-stars">{[1,2,3,4,5].map(i => <span>{i <= r.stars ? "★" : "☆"}</span>)}</div>
           </div>
-          <div class="review-stars">{"★".repeat(r.stars)}{"☆".repeat(5 - r.stars)}</div>
-          <p class="review-body">{r.body}</p>
+          <p class="review-body">„{r.body}"</p>
+          <div class="review-foot">
+            <span>{r.photos > 0 ? `📷 ${r.photos} Fotos` : "Bewertung"}</span>
+            <span>Hilfreich · Antworten</span>
+          </div>
         </div>
       ))}
+    </div>
+
+    <div class="reviews-cta">
+      <a href="https://www.google.com/search?q=vai+pizza+braunschweig" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-dark">
+        Alle Bewertungen auf Google
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
 </section>
