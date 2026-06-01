@@ -242,6 +242,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   z-index: 3;
   width: 86%;
+  height: auto;
   filter: drop-shadow(0 30px 40px rgba(0,0,0,0.45));
   transform: rotate(-8deg);
 }
