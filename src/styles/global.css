@@ -326,7 +326,8 @@ section { padding: 120px 0; position: relative; }
 
 /* concept (rodizio) */
 .concept { background: var(--cream-100); color: var(--green-900); }
-.concept .section-head h2 .lime { color: var(--lime); -webkit-text-stroke: 1px var(--green-900); }
+/* dunkleres Lime für Text auf hellem Grund (WCAG AA: 3.95:1 auf cream-100) */
+.concept .section-head h2 .lime { color: #5f7a18; -webkit-text-stroke: 1px var(--green-900); }
 .concept-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -427,7 +428,7 @@ section { padding: 120px 0; position: relative; }
   color: var(--cream-50);
   overflow: hidden;
 }
-.pricing .section-head p { color: rgba(245,236,214,0.7); }
+.pricing .section-head p { color: rgba(245,236,214,0.7); opacity: 1; }
 .pricing-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -455,7 +456,7 @@ section { padding: 120px 0; position: relative; }
 .price-card .price-tag {
   align-self: flex-start;
   background: rgba(168,201,59,0.15);
-  color: var(--lime);
+  color: var(--lime-soft);
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 11px;
@@ -480,7 +481,7 @@ section { padding: 120px 0; position: relative; }
   margin: 16px 0 4px;
 }
 .price-card .price .currency { font-size: 36px; vertical-align: top; }
-.price-card .price .per { font-family: var(--font-sans); font-style: normal; font-size: 14px; font-weight: 600; opacity: 0.6; margin-left: 6px; letter-spacing: 0; }
+.price-card .price .per { font-family: var(--font-sans); font-style: normal; font-size: 14px; font-weight: 600; opacity: 0.75; margin-left: 6px; letter-spacing: 0; }
 .price-card ul { list-style: none; padding: 0; margin: 8px 0 20px; }
 .price-card ul li {
   font-size: 14px;
