@@ -141,6 +141,10 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.85;
 }
 
+/* Hamburger-Button + mobiles Flyout-Menü (nur ≤980px aktiv) */
+.nav-toggle { display: none; }
+.nav-mobile { display: none; }
+
 /* hero */
 .hero {
   background: var(--green-800);
@@ -525,7 +529,8 @@ section { padding: 120px 0; position: relative; }
 .price-card.featured:hover .cta { background: var(--lime); color: var(--green-900); }
 
 .pricing-foot {
-  margin-top: 40px;
+  grid-column: 1 / -1;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1468,6 +1473,60 @@ section { padding: 120px 0; position: relative; }
 
 @media (max-width: 980px) {
   .nav-links { display: none; }
+
+  /* Hamburger-Button */
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(245,236,214,0.10);
+    flex-shrink: 0;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px; height: 2px;
+    margin: 0 auto;
+    background: var(--cream-50);
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Flyout-Panel */
+  .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--green-900);
+    border-top: 1px solid rgba(245,236,214,0.10);
+    box-shadow: 0 24px 32px rgba(0,0,0,0.35);
+    padding: 12px 24px 22px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  }
+  .nav-mobile.open { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-mobile a {
+    padding: 15px 4px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--cream-50);
+    border-bottom: 1px dashed rgba(245,236,214,0.12);
+  }
+  .nav-mobile .nav-mobile-cta {
+    margin-top: 14px;
+    justify-content: center;
+    color: var(--green-900);
+    border-bottom: 0;
+  }
   .hero-inner, .concept-grid, .bar-grid, .ingredients-grid, .visit-grid, .newsletter-card, .footer-grid { grid-template-columns: 1fr; }
   /* Grid-Bereiche auf eine Spalte zurücksetzen (sonst brechen die 2-Spalten-areas) */
   .hero-inner { grid-template-areas: "text" "visual" "meta"; }
@@ -1560,5 +1619,82 @@ section { padding: 120px 0; position: relative; }
     grid-column: 1 / -1;
     grid-row: auto;
   }
+
+  /* --- Cocktail-Galerie (Bar): Bilder volle Breite, untereinander --- */
+  .bar-stack {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 14px;
+    height: auto;
+  }
+  .bar-stack .img { height: 220px; }
+  .bar-stack .img.tall { grid-row: auto; }
+}
+
+/* ===== Tablet (641–980px) ===== */
+@media (min-width: 641px) and (max-width: 980px) {
+  /* --- Hero: die drei Info-Spalten über die volle Breite --- */
+  .hero-meta div { flex: 1; }
+
+  /* --- Preise: 2 Spalten — Rodizio | Getränke / Burger | grüne Box --- */
+  .pricing-cards { grid-template-columns: 1fr 1fr; }
+  .pricing-cards .price-card:nth-child(1) { order: 1; }
+  .pricing-cards .price-card:nth-child(3) { order: 2; }
+  .pricing-cards .price-card:nth-child(2) { order: 3; }
+  .pricing-cards .pricing-foot {
+    order: 4;
+    grid-column: auto;
+    margin-top: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* --- Bar: Fließtext rechts neben die Überschrift --- */
+  .bar-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "eyebrow eyebrow"
+      "heading text"
+      "ctas ctas"
+      "happy happy";
+    column-gap: 40px;
+    align-items: start;
+  }
+  .bar-text .eyebrow { grid-area: eyebrow; }
+  .bar-text h2 { grid-area: heading; margin-bottom: 0; }
+  .bar-text p { grid-area: text; align-self: center; }
+  .bar-text .hero-ctas { grid-area: ctas; }
+  .bar-text .happy-hour { grid-area: happy; }
+
+  /* --- Bewertungen: 2 nebeneinander, weniger Abstand unter dem Button --- */
+  .reviews-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-cta { margin-top: 32px; }
+  .reviews { padding-bottom: 48px; }
+
+  /* --- Lieferando: Überschrift links, Text rechts; Buttons nebeneinander --- */
+  .lieferando-card > div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "badge   badge"
+      "script  script"
+      "heading text"
+      "features features";
+    column-gap: 40px;
+    align-items: start;
+  }
+  .lieferando-card .lieferando-badge { grid-area: badge; }
+  .lieferando-card .hero-script { grid-area: script; }
+  .lieferando-card h3 { grid-area: heading; }
+  .lieferando-card p { grid-area: text; align-self: center; }
+  .lieferando-card .lieferando-features { grid-area: features; }
+  .lieferando-cta-stack { flex-direction: row; flex-wrap: wrap; }
+  .lieferando-cta-stack .btn { flex: 1; min-width: 220px; }
+  .lieferando-cta-stack .hours { flex-basis: 100%; }
+
+  /* --- Footer: Restaurant / Besuch / Rechtliches nebeneinander --- */
+  .footer-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid > div:first-child { grid-column: 1 / -1; }
 }
 
