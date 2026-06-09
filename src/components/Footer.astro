@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+import logo from '../assets/images/vai-pizza-logo.png'
 const base = Astro.url.pathname === '/' ? '' : '/'
 ---
 <footer class="footer">
@@ -6,7 +8,7 @@ const base = Astro.url.pathname === '/' ? '' : '/'
     <div class="footer-mega">vai pizza</div>
     <div class="footer-grid">
       <div>
-        <img src="/images/vai-pizza-logo.png" alt="Vai Pizza Rodizio" class="footer-logo" />
+        <Image src={logo} alt="Vai Pizza Rodizio" class="footer-logo" format="webp" loading="lazy" />
         <div class="footer-tagline">
           Brasilianisch-italienisches Pizza-Rodizio in Braunschweig.<br/>
           Seit 2014. Mit Liebe gemacht.

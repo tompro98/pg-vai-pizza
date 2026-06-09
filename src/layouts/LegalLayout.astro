@@ -1,4 +1,18 @@
 ---
+// Self-hosted fonts (SIL OFL-1.1) — als ESM importiert, damit Vite die
+// woff/woff2-Dateien in den Build kopiert. Kein externer Google-Fonts-Request.
+import '@fontsource/caveat/400.css'
+import '@fontsource/caveat/700.css'
+import '@fontsource/dm-serif-display/400.css'
+import '@fontsource/dm-serif-display/400-italic.css'
+import '@fontsource/manrope/400.css'
+import '@fontsource/manrope/600.css'
+import '@fontsource/manrope/700.css'
+import '@fontsource/manrope/800.css'
+import '../styles/global.css'
+import { Image } from 'astro:assets'
+import logo from '../assets/images/vai-pizza-logo.png'
+
 interface Props { title: string }
 const { title } = Astro.props
 const base = Astro.url.pathname === '/' ? '' : '/'
@@ -15,7 +29,7 @@ const base = Astro.url.pathname === '/' ? '' : '/'
   <nav class="nav">
     <div class="nav-inner">
       <a href={`${base}#home`} class="nav-logo" aria-label="Vai Pizza">
-        <img src="/images/vai-pizza-logo.png" alt="Vai Pizza" />
+        <Image src={logo} alt="Vai Pizza" format="webp" loading="eager" />
       </a>
       <div class="nav-links">
         <a href={`${base}#rodizio`}>Rodizio</a>
@@ -43,7 +57,6 @@ const base = Astro.url.pathname === '/' ? '' : '/'
 </html>
 
 <style is:global>
-  @import '../styles/global.css';
   .legal-content {
     max-width: 760px;
     margin: 0 auto;

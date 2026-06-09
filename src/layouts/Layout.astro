@@ -1,4 +1,17 @@
 ---
+// Self-hosted fonts (SIL OFL-1.1) — importiert als ESM, damit Astro/Vite
+// die woff/woff2-Dateien fingerprinted und in den Build kopiert. Kein
+// externer Google-Fonts-Request (DSGVO-konform).
+import '@fontsource/caveat/400.css'
+import '@fontsource/caveat/700.css'
+import '@fontsource/dm-serif-display/400.css'
+import '@fontsource/dm-serif-display/400-italic.css'
+import '@fontsource/manrope/400.css'
+import '@fontsource/manrope/600.css'
+import '@fontsource/manrope/700.css'
+import '@fontsource/manrope/800.css'
+import '../styles/global.css'
+
 interface Props {
   title?: string
   description?: string
@@ -25,7 +38,3 @@ const {
   <slot />
 </body>
 </html>
-
-<style is:global>
-  @import '../styles/global.css';
-</style>

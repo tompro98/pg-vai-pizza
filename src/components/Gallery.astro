@@ -1,4 +1,11 @@
 ---
+import { Image } from 'astro:assets'
+import aussenbereich from '../assets/images/vai-pizza-aussenbereich.jpg'
+import bar from '../assets/images/vai-pizza-bar.jpg'
+import cocktailFrucht from '../assets/images/vai-pizza-cocktail-frucht.jpg'
+import barBereich from '../assets/images/vai-pizza-bar-bereich.jpg'
+import barkeeperBlue from '../assets/images/vai-pizza-barkeeper-blue.jpg'
+import innenbereich from '../assets/images/vai-pizza-innenbereich.jpg'
 ---
 <section id="galerie" class="gallery">
   <div class="container">
@@ -12,29 +19,29 @@
 
     <div class="gallery-grid">
       <div class="g-item large">
-        <img src="/images/vai-pizza-aussenbereich.jpg" alt="Außenbereich" loading="lazy" />
+        <Image src={aussenbereich} alt="Außenbereich" format="webp" loading="lazy" />
         <span class="tag">Außenbereich</span>
       </div>
       <div class="g-item tall">
-        <img src="/images/vai-pizza-bar.jpg" alt="Bar" loading="lazy" />
+        <Image src={bar} alt="Bar" format="webp" loading="lazy" />
         <span class="tag">Bar</span>
       </div>
       <div class="g-item med">
-        <img src="/images/vai-pizza-cocktail-frucht.jpg" alt="Cocktail" loading="lazy" />
+        <Image src={cocktailFrucht} alt="Cocktail" format="webp" loading="lazy" />
       </div>
       <div class="g-item med text">
         <span class="sub">Seit 2014</span>
         <span class="big">Brasilien trifft<br/>Italien</span>
       </div>
       <div class="g-item wide">
-        <img src="/images/vai-pizza-bar-bereich.jpg" alt="Bar Bereich" loading="lazy" />
+        <Image src={barBereich} alt="Bar Bereich" format="webp" loading="lazy" />
         <span class="tag">Innenbereich</span>
       </div>
       <div class="g-item med">
-        <img src="/images/vai-pizza-barkeeper-blue.jpg" alt="Barkeeper" loading="lazy" />
+        <Image src={barkeeperBlue} alt="Barkeeper" format="webp" loading="lazy" />
       </div>
       <div class="g-item med">
-        <img src="/images/vai-pizza-innenbereich.jpg" alt="Restaurant" loading="lazy" />
+        <Image src={innenbereich} alt="Restaurant" format="webp" loading="lazy" />
       </div>
     </div>
   </div>

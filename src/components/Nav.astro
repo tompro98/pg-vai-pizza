@@ -1,10 +1,12 @@
 ---
+import { Image } from 'astro:assets'
+import logo from '../assets/images/vai-pizza-logo.png'
 const base = Astro.url.pathname === '/' ? '' : '/'
 ---
 <nav class="nav">
   <div class="nav-inner">
     <a href={`${base}#home`} class="nav-logo" aria-label="Vai Pizza">
-      <img src="/images/vai-pizza-logo.png" alt="Vai Pizza Rodizio" />
+      <Image src={logo} alt="Vai Pizza Rodizio" format="webp" loading="eager" />
     </a>
     <div class="nav-links">
       <a href={`${base}#rodizio`}>Rodizio</a>

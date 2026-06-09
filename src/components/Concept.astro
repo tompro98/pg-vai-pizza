@@ -1,4 +1,8 @@
 ---
+import { Image } from 'astro:assets'
+import kueche from '../assets/images/vai-pizza-kueche.jpg'
+import innenbereich from '../assets/images/vai-pizza-innenbereich.jpg'
+import restaurantInnen from '../assets/images/vai-pizza-restaurant-innen.jpg'
 ---
 <section id="rodizio" class="concept">
   <div class="container">
@@ -33,14 +37,14 @@
 
       <div class="concept-visual">
         <div class="v tall">
-          <img src="/images/vai-pizza-kueche.jpg" alt="Pizzaiolo am Steinofen" />
+          <Image src={kueche} alt="Pizzaiolo am Steinofen" format="webp" loading="lazy" />
           <span class="v-tag">In der Küche</span>
         </div>
         <div class="v">
-          <img src="/images/vai-pizza-innenbereich.jpg" alt="Innenbereich" />
+          <Image src={innenbereich} alt="Innenbereich" format="webp" loading="lazy" />
         </div>
         <div class="v">
-          <img src="/images/vai-pizza-restaurant-innen.jpg" alt="Volles Restaurant" />
+          <Image src={restaurantInnen} alt="Volles Restaurant" format="webp" loading="lazy" />
           <span class="v-tag">Lebendige Abende</span>
         </div>
       </div>

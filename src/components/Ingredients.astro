@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+import kueche from '../assets/images/vai-pizza-kueche.jpg'
 const items = [
   "Hähnchen Barbecue","Meeresfrüchte","Rucola","Hawaii","Rustica",
   "Pastirma","Sucuk","Truthahn-Salami","Hollandaise","Champignons",
@@ -23,7 +25,7 @@ const items = [
         </a>
       </div>
       <div class="ingredients-image">
-        <img src="/images/vai-pizza-kueche.jpg" alt="Pizzaiolo am Steinofen" />
+        <Image src={kueche} alt="Pizzaiolo am Steinofen" format="webp" loading="lazy" />
         <span class="ingredients-image-tag">Frisch aus dem Steinofen</span>
       </div>
     </div>
