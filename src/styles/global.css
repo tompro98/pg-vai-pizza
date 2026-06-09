@@ -1671,6 +1671,9 @@ section { padding: 120px 0; position: relative; }
   .reviews-grid { grid-template-columns: 1fr 1fr; }
   .reviews-cta { margin-top: 32px; }
   .reviews { padding-bottom: 48px; }
+  /* Score (4,0 + Sterne) rechts neben die Überschrift */
+  .reviews-head { grid-template-columns: 1.3fr 1fr; align-items: end; }
+  .reviews-summary { justify-self: end; }
 
   /* --- Lieferando: Überschrift links, Text rechts; Buttons nebeneinander --- */
   .lieferando-card > div:first-child {
