@@ -154,11 +154,17 @@ a { color: inherit; text-decoration: none; }
   padding: 60px 32px 80px;
   display: grid;
   grid-template-columns: 1.05fr 1fr;
+  grid-template-areas:
+    "text visual"
+    "meta visual";
   gap: 40px;
   align-items: center;
   position: relative;
   z-index: 2;
 }
+.hero-text { grid-area: text; }
+.hero-visual { grid-area: visual; }
+.hero-meta { grid-area: meta; }
 .hero-script {
   font-family: var(--font-script);
   font-size: 44px;
@@ -276,7 +282,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 .marquee-track {
-  display: flex; gap: 56px;
+  display: flex; gap: 0;
   padding: 18px 0;
   white-space: nowrap;
   animation: marquee 40s linear infinite;
@@ -285,13 +291,13 @@ a { color: inherit; text-decoration: none; }
   font-size: 28px;
   letter-spacing: -0.01em;
 }
-.marquee-track span { display: inline-flex; align-items: center; gap: 56px; }
+/* gleichmäßige Einheiten (Text + Trenner + margin) ohne Flex-Gap → nahtlose -50%-Schleife */
+.marquee-track span { display: inline-flex; align-items: center; gap: 56px; margin-right: 56px; }
 .marquee-track span::after {
   content: "✦";
   color: var(--lime);
   font-size: 18px;
   font-style: normal;
-  margin-left: 56px;
 }
 @keyframes marquee {
   from { transform: translateX(0); }
@@ -331,16 +337,21 @@ section { padding: 120px 0; position: relative; }
 .concept-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
+  grid-template-areas:
+    "story visual"
+    "quote visual";
   gap: 56px;
   align-items: start;
 }
+.concept-story { grid-area: story; }
+.concept-visual { grid-area: visual; }
+.concept-quote { grid-area: quote; }
 .concept-story p {
   font-size: 17px;
   line-height: 1.65;
   margin: 0 0 18px;
 }
 .concept-quote {
-  margin-top: 28px;
   padding: 64px 32px 28px;
   background: var(--green-800);
   color: var(--cream-50);
@@ -1458,6 +1469,9 @@ section { padding: 120px 0; position: relative; }
 @media (max-width: 980px) {
   .nav-links { display: none; }
   .hero-inner, .concept-grid, .bar-grid, .ingredients-grid, .visit-grid, .newsletter-card, .footer-grid { grid-template-columns: 1fr; }
+  /* Grid-Bereiche auf eine Spalte zurücksetzen (sonst brechen die 2-Spalten-areas) */
+  .hero-inner { grid-template-areas: "text" "visual" "meta"; }
+  .concept-grid { grid-template-areas: "story" "visual" "quote"; }
   .pricing-cards { grid-template-columns: 1fr; }
   .cocktail-strip { grid-template-columns: repeat(2, 1fr); }
   .concept-stats { grid-template-columns: repeat(2, 1fr); }
@@ -1471,5 +1485,80 @@ section { padding: 120px 0; position: relative; }
   .karte-hero-grid { grid-template-columns: 1fr; }
   .menu-items, .menu-items.three { grid-template-columns: 1fr; }
   .karte-note .container { grid-template-columns: 1fr; }
+}
+
+/* ===== Mobile (Phones) ===== */
+@media (max-width: 640px) {
+  /* --- Nav: statt "Tisch reservieren" nur die Telefonnummer (anklickbar) --- */
+  .nav-inner { padding: 0 18px; }
+  .nav-reserve { display: none; }
+  .nav-phone {
+    opacity: 1;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cream-50);
+    white-space: nowrap;
+    background: rgba(245,236,214,0.10);
+    padding: 9px 16px;
+    border-radius: 999px;
+  }
+
+  /* --- Hero: CTAs volle Breite, danach Pizza, danach Meta untereinander --- */
+  .hero-inner { padding: 40px 18px 56px; gap: 28px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+  .hero-meta {
+    margin-top: 8px;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+  .hero-meta div {
+    width: 100%;
+    padding: 16px 0;
+    border-top: 1px dashed rgba(245,236,214,0.18);
+  }
+
+  /* --- Laufband: deutlich schneller --- */
+  .marquee-track { animation-duration: 15s; font-size: 22px; }
+  .marquee-track span { gap: 40px; margin-right: 40px; }
+
+  /* --- Section-Köpfe: Überschrift + Text untereinander, volle Breite --- */
+  .section-head { grid-template-columns: 1fr; gap: 14px; margin-bottom: 40px; }
+  .section-head p { max-width: none; }
+
+  /* --- Concept (Rodizio): Bilder untereinander über die volle Breite --- */
+  .concept-grid { gap: 28px; }
+  .concept-visual {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 240px;
+    gap: 14px;
+  }
+  .concept-visual .v.tall { grid-row: auto; }
+  .concept-stats { gap: 16px; margin-top: 48px; padding-top: 32px; }
+
+  /* --- Bar / Happy Hour: Würfel kleiner in die obere rechte Ecke --- */
+  .happy-hour { padding: 28px 24px; }
+  .happy-hour .dice {
+    width: 76px; height: 76px;
+    top: 14px; right: 14px;
+    border-radius: 16px;
+    transform: rotate(12deg);
+  }
+  .happy-hour .dice .face { grid-template-columns: repeat(3, 7px); grid-template-rows: repeat(3, 7px); gap: 6px; }
+  .happy-hour .dice .face .pip { width: 7px; height: 7px; }
+  .happy-hour h3 { max-width: 78%; }
+  .happy-hour .times { flex-wrap: nowrap; gap: 10px; }
+  .happy-hour .time-pill { flex: 1; text-align: center; padding: 8px 6px; }
+
+  /* --- Galerie: alle Bilder volle Breite, untereinander --- */
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+  .gallery-grid .g-item,
+  .g-item.large, .g-item.tall, .g-item.wide, .g-item.med, .g-item.text {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
 }
 
