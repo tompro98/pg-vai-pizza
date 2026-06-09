@@ -1,15 +1,16 @@
 ---
 // Self-hosted fonts (SIL OFL-1.1) — importiert als ESM, damit Astro/Vite
 // die woff/woff2-Dateien fingerprinted und in den Build kopiert. Kein
-// externer Google-Fonts-Request (DSGVO-konform).
-import '@fontsource/caveat/400.css'
-import '@fontsource/caveat/700.css'
-import '@fontsource/dm-serif-display/400.css'
-import '@fontsource/dm-serif-display/400-italic.css'
-import '@fontsource/manrope/400.css'
-import '@fontsource/manrope/600.css'
-import '@fontsource/manrope/700.css'
-import '@fontsource/manrope/800.css'
+// externer Google-Fonts-Request (DSGVO-konform). Nur das Latin-Subset
+// (deckt ä ö ü ß € ab) — spart render-blocking CSS für eine deutsche Seite.
+import '@fontsource/caveat/latin-400.css'
+import '@fontsource/caveat/latin-700.css'
+import '@fontsource/dm-serif-display/latin-400.css'
+import '@fontsource/dm-serif-display/latin-400-italic.css'
+import '@fontsource/manrope/latin-400.css'
+import '@fontsource/manrope/latin-600.css'
+import '@fontsource/manrope/latin-700.css'
+import '@fontsource/manrope/latin-800.css'
 import '../styles/global.css'
 
 interface Props {
@@ -29,6 +30,17 @@ const {
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link
+    rel="preload"
+    as="image"
+    href="/images/vai-pizza-braunschweig-hero-520.webp"
+    imagesrcset="/images/vai-pizza-braunschweig-hero-380.webp 380w,
+                 /images/vai-pizza-braunschweig-hero-520.webp 520w,
+                 /images/vai-pizza-braunschweig-hero-780.webp 780w,
+                 /images/vai-pizza-braunschweig-hero-1040.webp 1040w"
+    imagesizes="(max-width: 980px) 80vw, (max-width: 1320px) 38vw, 510px"
+    fetchpriority="high"
+  />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
