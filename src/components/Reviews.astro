@@ -47,10 +47,6 @@ const reviews = [
             <span class="count">aus 1.049 Google-Bewertungen</span>
           </div>
         </div>
-        <span class="reviews-logo">
-          <span class="g">G</span>
-          Direkt von Google Reviews
-        </span>
       </div>
     </div>
 
@@ -62,17 +58,12 @@ const reviews = [
             <div class="review-meta">
               <div class="name">
                 {r.name}
-                {r.badge && <span class="badge">{r.badge}</span>}
               </div>
               <div class="time">{r.time}</div>
             </div>
             <div class="review-stars">{[1,2,3,4,5].map(i => <span>{i <= r.stars ? "★" : "☆"}</span>)}</div>
           </div>
           <p class="review-body">„{r.body}"</p>
-          <div class="review-foot">
-            <span>{r.photos > 0 ? `📷 ${r.photos} Fotos` : "Bewertung"}</span>
-            <span>Hilfreich · Antworten</span>
-          </div>
         </div>
       ))}
     </div>
