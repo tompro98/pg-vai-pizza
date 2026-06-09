@@ -29,7 +29,7 @@ const base = Astro.url.pathname === '/' ? '' : '/'
   <nav class="nav">
     <div class="nav-inner">
       <a href={`${base}#home`} class="nav-logo" aria-label="Vai Pizza">
-        <Image src={logo} alt="Vai Pizza" width={340} height={192} format="webp" quality={60} loading="eager" />
+        <Image src={logo} alt="Vai Pizza" width={99} height={56} densities={[1, 2]} format="webp" quality={60} loading="eager" />
       </a>
       <div class="nav-links">
         <a href={`${base}#rodizio`}>Rodizio</a>
